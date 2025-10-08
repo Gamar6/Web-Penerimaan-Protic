@@ -140,53 +140,76 @@
       </footer>
     </main>
     <script>
-      const SHEET_URL =
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vSEY_lwAeZ92pPZPX3faRFlip_gLw6tZD6Vkc_67k6Ni0CGN82jHXg85dJ4aiW3MGjou2n9XHPDh0cZ/pubhtml?gid=0&single=true' // ganti dengan link kamu
+      const API_URL = "https://script.google.com/macros/s/AKfycbz6j3t6-GU0KK_Xh6ax7bylrn_rIRr1_lcCorZ6k8k-OfG3AIAqyGB3CDii9jHQOCCosQ/exec";
 
-      document.querySelector('button').addEventListener('click', async () => {
-        const npm = document.getElementById('fullname').value.trim()
-        if (!npm) return alert('Silakan masukkan NPM Anda!')
+      const submitBtn = document.getElementById("submit");
+      const npmInput = document.getElementById("fullname");
+
+      // Ambil data dari API
+      async function fetchStudentData(npm) {
+        const res = await fetch(`${API_URL}?nim=${encodeURIComponent(npm)}`, {
+          headers: { "Accept": "application/json" }
+        });
+
+        const text = await res.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch {
+          throw new Error("Respons bukan JSON: " + text.slice(0, 200));
+        }
+
+        if (!res.ok || data.ok === false) {
+          throw new Error(data?.error || `HTTP ${res.status}`);
+        }
+
+        return data;
+      }
+
+      // Saat tombol diklik
+      submitBtn.addEventListener("click", async () => {
+        const npm = npmInput.value.trim();
+
+        if (!npm) {
+          alert("Masukkan NPM terlebih dahulu!");
+          return;
+        }
 
         try {
-          const res = await fetch(SHEET_URL)
-          const text = await res.text()
+          const result = await fetchStudentData(npm);
 
-          // Ubah CSV ke array
-          const rows = text.split('\n').map((r) => r.split(','))
-          // Header: [NPM, Nama, Divisi, Status]
-          const user = rows.find((r) => r[0].trim() === npm)
-
-          if (!user) {
-            alert('NPM tidak ditemukan. Periksa kembali.')
-            return
+          if (!result.data) {
+            alert("❌ NPM tidak ditemukan di data pengurus!");
+            return;
           }
 
-          const [npmData, nama, divisi, status] = user.map((v) => v.trim())
+          // Ambil data sesuai nama kolom di spreadsheet
+          const nim = npmInput.value;
+          const nama = result.data.Nama;
+          const divisi = result.data.Divisi;
+          const status = result.data.Status;
 
-          if (status.toLowerCase() === 'diterima') {
-            localStorage.setItem('nama', nama)
-            localStorage.setItem('divisi', divisi)
-            localStorage.setItem('kontak', getKontakDivisi(divisi))
-            window.location.href = 'success.html'
+          // Tampilkan hasil
+          // alert(`✅ Data ditemukan!\n\nNama: ${nama}\nDivisi: ${divisi}\nStatus: ${status}`);
+
+          // Simpan ke sessionStorage (opsional)
+          sessionStorage.setItem("studentData", JSON.stringify(result.data));
+
+          // Arahkan ke halaman sesuai status
+          if (status && status.toLowerCase() === "diterima") {
+            window.location.href = "success.html";
           } else {
-            localStorage.setItem('nama', nama)
-            localStorage.setItem('divisi', divisi)
-            window.location.href = 'denied.html'
+            window.location.href = "denied.html";
           }
-        } catch (err) {
-          console.error(err)
-          alert('Gagal mengambil data. Pastikan link Google Sheets benar dan di-publish ke web.')
-        }
-      })
 
-      function getKontakDivisi(divisi) {
-        const kontak = {
-          WEB: 'https://wa.me/6281234567890',
-          'UI/UX': 'https://wa.me/6289876543210',
-          Acara: 'https://wa.me/628567891011',
+        } catch (err) {
+          console.error(err);
+          alert("Terjadi kesalahan: " + err.message);
         }
-        return kontak[divisi] || '#'
-      }
-    </script>
+      });
+      </script>
+
+
+
   </body>
 </html>

@@ -60,10 +60,10 @@
         <section class="py-16 flex flex-col items-center gap-8">
           <div class="flex flex-col  gap-16 w-full text-center">
             <div class="flex flex-col gap-10 items-center">
-              <h2 class="font-playfair text-3xl lg:text-5xl uppercase">
+              <h2 class="font-playfair text-3xl lg:text-4xl uppercase">
                 Selamat Anda Dinyatakan Lolos<br>
-                Sebagai Pengurus Protic <br>
-                2025/2026
+                <span class="text-3xl"> Sebagai Pengurus Protic <br>
+                2025/2026 </span>
               </h2>
 
               <div class="bg-gradient-to-b from-[#80C89F] via-[#114B2A] to-[#06291E] border-[1px] border-solid  border-t-[linear-gradient(180deg,_#06291E_3.58%,_#227D4A_27.28%,_#80C89F_45.91%,_#227D4A_57.31%,_#000000_90.67%)] rounded-[12px]  shadow-[0px_0px_27.3px_rgba(48,126,82,0.33)]  py-[16px] px-[48px]  flex items-center justify-center w-full">
@@ -74,12 +74,12 @@
               </div>
             </div>
 
-            <div class="w-full h-[61px]  bg-gradient-to-b from-[#114B2A] to-[#000000] border-[1px]  border-solid  border-[linear-gradient(180deg,_#06291E_1.44%,_#227D4A_12.75%,_#80C89F_24.43%,_#227D4A_39.47%,_#151515_87.33%)] rounded-[8px]  py-[70px] px-[13px] text-white  font-[300]  text-[13px]  leading-[27px] text-center items-center flex justify-center">
-                Anda resmi bergabung dengan Divisi {{ divisi }} Protic<br>
+            <div class="w-full py-5 bg-gradient-to-b from-[#114B2A] to-[#000000] border-[1px]  border-solid  border-[linear-gradient(180deg,_#06291E_1.44%,_#227D4A_12.75%,_#80C89F_24.43%,_#227D4A_39.47%,_#151515_87.33%)] rounded-[8px] px-[13px] text-white  font-[300]  text-[13px]  leading-[27px] text-center items-center flex justify-center">
+                <!-- Anda resmi bergabung dengan Divisi {{ divisi }} Protic<br>
                 2025/2026!<br>
                 Terima kasih telah menjadi bagian dari kami.<br>
                 Klik tombol di bawah untuk masuk ke grup<br>
-                komunitas!
+                komunitas! -->
             </div>
 
           </div>
@@ -134,20 +134,66 @@
         <p class="text-center text-[10px] mt-6">© 2025 Protic | All Right Reserved</p>
       </footer>
     </main>
+    <script>
+  // Ambil data dari sessionStorage
+  const studentData = JSON.parse(sessionStorage.getItem("studentData"));
 
-<script>
-  const nama = localStorage.getItem("nama");
-  const divisi = localStorage.getItem("divisi");
-  const kontak = localStorage.getItem("kontak");
-
-  if (nama && divisi) {
-    document.querySelectorAll("h3")[0].textContent = nama;
-    document.querySelectorAll("h3")[1].textContent = `Divisi ${divisi}`;
-    document.querySelector("button").addEventListener("click", () => {
-      window.open(kontak, "_blank");
-    });
-  } else {
+  if (!studentData) {
+    alert("Data tidak ditemukan. Silakan kembali ke halaman utama.");
     window.location.href = "index.html";
+  } else {
+    // Ambil elemen
+    const namaEl = document.querySelectorAll("h3.text-xl.font-semibold.text-center")[0];
+    const divisiEl = document.querySelectorAll("h3.text-xl.font-semibold.text-center")[1];
+    const infoEl = document.querySelector(".text-center.items-center.flex.justify-center");
+    const groupBtn = document.querySelector("button");
+
+    // Isi nama & divisi
+    namaEl.textContent = studentData.Nama;
+    divisiEl.textContent = `Divisi ${studentData.Divisi}`;
+
+    // Ubah isi info agar lebih rapi dan proporsional
+    infoEl.innerHTML = `
+      <div class="flex flex-col items-center gap-2 leading-relaxed">
+        <p class="text-[15px]">Anda resmi bergabung dengan</p>
+        <p class="text-[18px] font-semibold text-lightgreen">Divisi ${studentData.Divisi} PROTIC 2025/2026</p>
+        <p class="text-[14px] mt-2 text-textgray">Terima kasih telah menjadi bagian dari kami.</p>
+        <p class="text-[14px] text-textgray">Klik tombol di bawah untuk masuk ke grup komunitas!</p>
+      </div>
+    `;
+
+
+    // text message whatsapp
+    const info = `Halo Kak! Sebelumnya perkenalkan, saya
+
+Nama   : ${studentData.Nama}
+NIM    : ${studentData.NIM}
+Divisi : ${studentData.Divisi}
+
+Saya sudah dinyatakan DITERIMA sebagai Pengurus Protic 2025/2026 pada divisi ${studentData.Divisi}.  
+Mohon arahan lebih lanjut, Kak. Terima kasih 🙏🏻`;
+
+    // Link grup berdasarkan divisi
+    const groupLinks = {
+      "DATA": `https://api.whatsapp.com/send/?phone=6285963118731&text=${encodeURIComponent(info)}`,
+      "DEVOPS": `https://api.whatsapp.com/send/?phone=6283195617970&text=${encodeURIComponent(info)}`,
+      "HUMAS": `https://api.whatsapp.com/send/?phone=6281226723902&text=${encodeURIComponent(info)}`,
+      "KOMINFO": `https://api.whatsapp.com/send/?phone=6285867688482&text=${encodeURIComponent(info)}`,
+      "MOBILE": `https://api.whatsapp.com/send/?phone=6285974165996&text=${encodeURIComponent(info)}`,
+      "UI/UX": `https://api.whatsapp.com/send/?phone=6282136952635&text=${encodeURIComponent(info)}`,
+      "WEB": `https://api.whatsapp.com/send/?phone=6282281007367&text=${encodeURIComponent(info)}`,
+      "SEKRETARIS": `https://api.whatsapp.com/send/?phone=6289514908998&text=${encodeURIComponent(info)}`
+    };
+
+    const link = groupLinks[studentData.Divisi.toUpperCase()];
+
+    if (link) {
+      groupBtn.addEventListener("click", () => window.open(link, "_blank"));
+    } else {
+      groupBtn.disabled = true;
+      groupBtn.textContent = "Link Grup Belum Tersedia";
+      groupBtn.classList.add("opacity-50", "cursor-not-allowed");
+    }
   }
 </script>
   </body>

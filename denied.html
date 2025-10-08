@@ -59,33 +59,24 @@
       <div class="px-6">
         <section class="py-16 flex flex-col items-center gap-8">
           <div class="flex flex-col  gap-16 w-full text-center">
-            <div class="flex flex-col gap-10 items-center">
-              <h2 class="font-playfair text-3xl lg:text-5xl uppercase">
+            <!-- <div class="flex flex-col gap-10 items-center"> -->
+              <div class="w-full py-5 px-8 bg-gradient-to-b from-[#114B2A] to-[#000000] border-[1px]  border-solid  border-[linear-gradient(180deg,_#06291E_1.44%,_#227D4A_12.75%,_#80C89F_24.43%,_#227D4A_39.47%,_#151515_87.33%)] rounded-[8px] text-white  font-[300]  text-[13px]  leading-[27px] text-center items-center flex justify-center">
+              <h2 class="font-playfair text-3xl lg:text-4xl">
                 Mohon Maaf Anda Dinyatakan<br>
                 Tidak Lolos
               </h2>
-
-              <div class="bg-gradient-to-b from-[#80C89F] via-[#114B2A] to-[#06291E] border-[1px] border-solid  border-t-[linear-gradient(180deg,_#06291E_3.58%,_#227D4A_27.28%,_#80C89F_45.91%,_#227D4A_57.31%,_#000000_90.67%)] rounded-[12px]  shadow-[0px_0px_27.3px_rgba(48,126,82,0.33)]  py-[16px] px-[48px]  flex items-center justify-center w-full">
-                <h3 class="text-xl font-semibold text-center">Nama</h3>
-              </div>
-              <div class="bg-gradient-to-b from-[#80C89F] via-[#114B2A] to-[#06291E] border-[1px] border-solid  border-t-[linear-gradient(180deg,_#06291E_3.58%,_#227D4A_27.28%,_#80C89F_45.91%,_#227D4A_57.31%,_#000000_90.67%)] rounded-[12px]  shadow-[0px_0px_27.3px_rgba(48,126,82,0.33)]  py-[16px] px-[48px]  flex items-center justify-center w-full">
-                <h3 class="text-xl font-semibold text-center">Divisi {{ $divisi }}</h3>
-              </div>
             </div>
 
             <div class="w-full h-[61px]  bg-gradient-to-b from-[#114B2A] to-[#000000] border-[1px]  border-solid  border-[linear-gradient(180deg,_#06291E_1.44%,_#227D4A_12.75%,_#80C89F_24.43%,_#227D4A_39.47%,_#151515_87.33%)] rounded-[8px]  py-[70px] px-[13px] text-white  font-[300]  text-[13px]  leading-[27px] text-center items-center flex justify-center">
-                Anda resmi bergabung dengan Divisi {{ divisi }} Protic<br>
-                2025/2026!<br>
-                Terima kasih telah menjadi bagian dari kami.<br>
-                Klik tombol di bawah untuk masuk ke grup<br>
-                komunitas!
+                Kami menghargai semangat dan usaha Anda selama proses seleksi. <br>
+                Teruslah berkarya dan jangan berhenti mengejar kesempatan lain.
             </div>
 
           </div>
           <div class="w-[344px] mt-8 h-px bg-[linear-gradient(90deg,_#06291E_1.44%,_#227D4A_21.84%,_#80C89F_41.5%,_#227D4A_62.27%,_#000000_91.61%)] shadow-[0px_0px_7.6px_rgba(48,126,82,1)]"></div>
 
           <button class="px-8 py-4 text-sm font-bold rounded-[60px] bg-[linear-gradient(180deg,_#87EBB3_0%,_#23824C_100%)] border border-solid  border-[linear-gradient(180deg,_#06291E_1.44%,_#227D4A_21.84%,_#80C89F_41.5%,_#227D4A_62.27%,_#000000_91.61%)] shadow-[0px_-1px_13.6px_rgba(108,184,141,0.43)] text-white  font-sans  text-[24px] leading-[27px] uppercase  cursor-pointer  transition-all duration-300 ease-in-out  self-center  mt-[24px] mb-[30px] hover:-translate-y-[2px]  hover:shadow-[0px_-1px_13.6px_rgba(108,184,141,0.43),0px_4px_8px_rgba(0,0,0,0.2)] focus:outline focus:outline-[2px] focus:outline-[#80C89F] focus:outline-offset-[2px]">
-            Join Group Division
+            <a href="https://chat.whatsapp.com/BqQk8moIETs2sf3IMCL9LU?mode=ems_wa_t" target="_blank">Join Community Protic</a>
           </button>
 
 
@@ -134,16 +125,5 @@
       </footer>
     </main>
 
-<script>
-  const nama = localStorage.getItem("nama");
-  const divisi = localStorage.getItem("divisi");
-
-  if (nama && divisi) {
-    document.querySelectorAll("h3")[0].textContent = nama;
-    document.querySelectorAll("h3")[1].textContent = `Divisi ${divisi}`;
-  } else {
-    window.location.href = "index.html";
-  }
-</script>
   </body>
 </html>
