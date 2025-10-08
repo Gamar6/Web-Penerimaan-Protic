@@ -12,7 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- <link rel="stylesheet" href="/src/output.css"> -->
 
     <!-- Tailwind CDN -->
@@ -23,7 +26,7 @@
           extend: {
             fontFamily: {
               poppins: ['Poppins', 'sans-serif'],
-              playfair: ['Playfair Display', 'serif']
+              playfair: ['Playfair Display', 'serif'],
             },
             colors: {
               primary: '#3BAE6D',
@@ -48,9 +51,7 @@
       }
     </script>
   </head>
-  <body class="font-poppins bg-bgdark text-white overflow-x-hidden ">
-    
-
+  <body class="font-poppins bg-bgdark text-white overflow-x-hidden">
     <!-- MAIN -->
     <main class="flex flex-col items-center">
       <!-- HEADER -->
@@ -59,34 +60,43 @@
       </header>
 
       <div class="px-6">
-
         <section class="py-16 flex flex-col items-center gap-8">
-          <div class="flex flex-col  gap-16 w-full text-center">
+          <div class="flex flex-col gap-16 w-full text-center">
             <div class="flex flex-col gap-10 items-center">
               <h2 class="font-playfair text-3xl lg:text-5xl uppercase">
-                PENGUMUMAN <br> <span class="text-3xl"> PENGURUS PROTIC 2025/2026 </span>
+                PENGUMUMAN <br />
+                <span class="text-3xl"> PENGURUS PROTIC 2025/2026 </span>
               </h2>
 
-              <div class="bg-gradient-to-b from-[#80C89F] via-[#114B2A] to-[#06291E] border-[1px] border-solid  border-t-[linear-gradient(180deg,_#06291E_3.58%,_#227D4A_27.28%,_#80C89F_45.91%,_#227D4A_57.31%,_#000000_90.67%)] rounded-[12px]  shadow-[0px_0px_27.3px_rgba(48,126,82,0.33)]  py-[16px] px-[48px]  flex items-center justify-center w-full">
+              <div
+                class="bg-gradient-to-b from-[#80C89F] via-[#114B2A] to-[#06291E] border-[1px] border-solid border-t-[linear-gradient(180deg,_#06291E_3.58%,_#227D4A_27.28%,_#80C89F_45.91%,_#227D4A_57.31%,_#000000_90.67%)] rounded-[12px] shadow-[0px_0px_27.3px_rgba(48,126,82,0.33)] py-[16px] px-[48px] flex items-center justify-center w-full"
+              >
                 <h3 class="text-xl font-semibold text-center">Masukkan NPM Anda</h3>
               </div>
             </div>
 
             <div class="flex flex-col gap-4 items-start">
               <label for="fullname" class="text-sm font-semibold uppercase">NPM</label>
-              <input type="text" id="fullname" name="fullname" class="w-full h-[61px]  bg-gradient-to-b from-[#114B2A] to-[#000000] border-[1px]  border-solid  border-[linear-gradient(180deg,_#06291E_1.44%,_#227D4A_12.75%,_#80C89F_24.43%,_#227D4A_39.47%,_#151515_87.33%)] rounded-[8px]  py-[16px] px-4 text-white  font-[300]  text-[13px]  leading-[27px]" required placeholder="25010xxx" />
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                class="w-full h-[61px] bg-gradient-to-b from-[#114B2A] to-[#000000] border-[1px] border-solid border-[linear-gradient(180deg,_#06291E_1.44%,_#227D4A_12.75%,_#80C89F_24.43%,_#227D4A_39.47%,_#151515_87.33%)] rounded-[8px] py-[16px] px-4 text-white font-[300] text-[13px] leading-[27px]"
+                required
+                placeholder="25010xxx"
+              />
             </div>
-
           </div>
-          <div class="w-[344px] mt-8 h-px bg-[linear-gradient(90deg,_#06291E_1.44%,_#227D4A_21.84%,_#80C89F_41.5%,_#227D4A_62.27%,_#000000_91.61%)] shadow-[0px_0px_7.6px_rgba(48,126,82,1)]"></div>
+          <div
+            class="w-[344px] mt-8 h-px bg-[linear-gradient(90deg,_#06291E_1.44%,_#227D4A_21.84%,_#80C89F_41.5%,_#227D4A_62.27%,_#000000_91.61%)] shadow-[0px_0px_7.6px_rgba(48,126,82,1)]"
+          ></div>
 
-          <button class="w-[148px] h-[40px] rounded-[60px] bg-[linear-gradient(180deg,_#87EBB3_0%,_#23824C_100%)] border border-solid  border-[linear-gradient(180deg,_#06291E_1.44%,_#227D4A_21.84%,_#80C89F_41.5%,_#227D4A_62.27%,_#000000_91.61%)] shadow-[0px_-1px_13.6px_rgba(108,184,141,0.43)] text-white  font-sans  text-[24px]  font-semibold  leading-[27px] uppercase  cursor-pointer  transition-all duration-300 ease-in-out  self-center  mt-[24px] mb-[30px] hover:-translate-y-[2px]  hover:shadow-[0px_-1px_13.6px_rgba(108,184,141,0.43),0px_4px_8px_rgba(0,0,0,0.2)] focus:outline focus:outline-[2px] focus:outline-[#80C89F] focus:outline-offset-[2px]">
+          <button id="submit"
+            class="w-[148px] h-[40px] rounded-[60px] bg-[linear-gradient(180deg,_#87EBB3_0%,_#23824C_100%)] border border-solid border-[linear-gradient(180deg,_#06291E_1.44%,_#227D4A_21.84%,_#80C89F_41.5%,_#227D4A_62.27%,_#000000_91.61%)] shadow-[0px_-1px_13.6px_rgba(108,184,141,0.43)] text-white font-sans text-[24px] font-semibold leading-[27px] uppercase cursor-pointer transition-all duration-300 ease-in-out self-center mt-[24px] mb-[30px] hover:-translate-y-[2px] hover:shadow-[0px_-1px_13.6px_rgba(108,184,141,0.43),0px_4px_8px_rgba(0,0,0,0.2)] focus:outline focus:outline-[2px] focus:outline-[#80C89F] focus:outline-offset-[2px]"
+          >
             Kirim
           </button>
-
-
         </section>
-        
       </div>
 
       <!-- FOOTER -->
@@ -129,7 +139,54 @@
         <p class="text-center text-[10px] mt-6">© 2025 Protic | All Right Reserved</p>
       </footer>
     </main>
+    <script>
+      const SHEET_URL =
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vSEY_lwAeZ92pPZPX3faRFlip_gLw6tZD6Vkc_67k6Ni0CGN82jHXg85dJ4aiW3MGjou2n9XHPDh0cZ/pubhtml?gid=0&single=true' // ganti dengan link kamu
 
-    <!-- <script src="script.js" defer></script> -->
+      document.querySelector('button').addEventListener('click', async () => {
+        const npm = document.getElementById('fullname').value.trim()
+        if (!npm) return alert('Silakan masukkan NPM Anda!')
+
+        try {
+          const res = await fetch(SHEET_URL)
+          const text = await res.text()
+
+          // Ubah CSV ke array
+          const rows = text.split('\n').map((r) => r.split(','))
+          // Header: [NPM, Nama, Divisi, Status]
+          const user = rows.find((r) => r[0].trim() === npm)
+
+          if (!user) {
+            alert('NPM tidak ditemukan. Periksa kembali.')
+            return
+          }
+
+          const [npmData, nama, divisi, status] = user.map((v) => v.trim())
+
+          if (status.toLowerCase() === 'diterima') {
+            localStorage.setItem('nama', nama)
+            localStorage.setItem('divisi', divisi)
+            localStorage.setItem('kontak', getKontakDivisi(divisi))
+            window.location.href = 'success.html'
+          } else {
+            localStorage.setItem('nama', nama)
+            localStorage.setItem('divisi', divisi)
+            window.location.href = 'denied.html'
+          }
+        } catch (err) {
+          console.error(err)
+          alert('Gagal mengambil data. Pastikan link Google Sheets benar dan di-publish ke web.')
+        }
+      })
+
+      function getKontakDivisi(divisi) {
+        const kontak = {
+          WEB: 'https://wa.me/6281234567890',
+          'UI/UX': 'https://wa.me/6289876543210',
+          Acara: 'https://wa.me/628567891011',
+        }
+        return kontak[divisi] || '#'
+      }
+    </script>
   </body>
 </html>
