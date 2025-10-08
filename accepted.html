@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROTIC - Programming Technology Informatics Club</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/src/output.css"> -->
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ['Poppins', 'sans-serif'],
+              playfair: ['Playfair Display', 'serif']
+            },
+            colors: {
+              primary: '#3BAE6D',
+              lightgreen: '#49D185',
+              lightergreen: '#87EBB3',
+              accentgreen: '#80C89F',
+              darkgreen: '#06291E',
+              meddarkgreen: '#114B2A',
+              medgreen: '#227D4A',
+              darker: '#051A13',
+              bgdark: '#161616',
+              bgdarker: '#444444',
+              textgray: 'rgba(255,255,255,0.75)',
+            },
+            boxShadow: {
+              green: '0 0 27px rgba(48,126,82,0.33)',
+              glow: '0 0 7px rgba(48,126,82,1)',
+              button: '0 -1px 13px rgba(108,184,141,0.43)',
+            },
+          },
+        },
+      }
+    </script>
+  </head>
+  <body class="font-poppins bg-bgdark text-white overflow-x-hidden ">
+    
+
+    <!-- MAIN -->
+    <main class="flex flex-col items-center">
+      <!-- HEADER -->
+      <header class="flex justify-center w-full max-w-sm">
+        <img src="img/header.png" alt="PROTIC Header" class="w-full" />
+      </header>
+
+      <div class="px-6">
+
+        <section class="py-16 flex flex-col items-center gap-8">
+          <div class="flex flex-col  gap-16 w-full text-center">
+            <div class="flex flex-col gap-10 items-center">
+              <h2 class="font-playfair text-3xl lg:text-5xl uppercase">
+                PENGUMUMAN <br> <span class="text-3xl"> PENGURUS PROTIC 2025/2026 </span>
+              </h2>
+
+              <div class="bg-gradient-to-b from-[#80C89F] via-[#114B2A] to-[#06291E] border-[1px] border-solid  border-t-[linear-gradient(180deg,_#06291E_3.58%,_#227D4A_27.28%,_#80C89F_45.91%,_#227D4A_57.31%,_#000000_90.67%)] rounded-[12px]  shadow-[0px_0px_27.3px_rgba(48,126,82,0.33)]  py-[16px] px-[48px]  flex items-center justify-center w-full">
+                <h3 class="text-xl font-semibold text-center">Masukkan NPM Anda</h3>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-4 items-start">
+              <label for="fullname" class="text-sm font-semibold uppercase">NPM</label>
+              <input type="text" id="fullname" name="fullname" class="w-full h-[61px]  bg-gradient-to-b from-[#114B2A] to-[#000000] border-[1px]  border-solid  border-[linear-gradient(180deg,_#06291E_1.44%,_#227D4A_12.75%,_#80C89F_24.43%,_#227D4A_39.47%,_#151515_87.33%)] rounded-[8px]  py-[16px] px-4 text-white  font-[300]  text-[13px]  leading-[27px]" required placeholder="25010xxx" />
+            </div>
+
+          </div>
+          <div class="w-[344px] mt-8 h-px bg-[linear-gradient(90deg,_#06291E_1.44%,_#227D4A_21.84%,_#80C89F_41.5%,_#227D4A_62.27%,_#000000_91.61%)] shadow-[0px_0px_7.6px_rgba(48,126,82,1)]"></div>
+
+          <button class="px-8 py-4 text-sm font-bold rounded-[60px] bg-[linear-gradient(180deg,_#87EBB3_0%,_#23824C_100%)] border border-solid  border-[linear-gradient(180deg,_#06291E_1.44%,_#227D4A_21.84%,_#80C89F_41.5%,_#227D4A_62.27%,_#000000_91.61%)] shadow-[0px_-1px_13.6px_rgba(108,184,141,0.43)] text-white  font-sans  text-[24px] leading-[27px] uppercase  cursor-pointer  transition-all duration-300 ease-in-out  self-center  mt-[24px] mb-[30px] hover:-translate-y-[2px]  hover:shadow-[0px_-1px_13.6px_rgba(108,184,141,0.43),0px_4px_8px_rgba(0,0,0,0.2)] focus:outline focus:outline-[2px] focus:outline-[#80C89F] focus:outline-offset-[2px]">
+            Join Group Division
+          </button>
+
+
+        </section>
+        
+      </div>
+
+      <!-- FOOTER -->
+      <footer
+        class="w-full bg-gradient-to-b from-darkgreen to-[#3DA86C] border-t border-t-darkgreen py-8 px-8 flex flex-col justify-between"
+      >
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-[1200px] mx-auto"
+        >
+          <div class="flex items-center gap-4">
+            <img
+              src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/pOR1YyEsWN.png"
+              alt="PROTIC Logo"
+              class="w-[85px] h-[95px]"
+            />
+            <div>
+              <h3 class="font-[Dungeon] text-[40px] leading-tight mb-1">PROTIC</h3>
+              <p class="text-[12px]">Programming Technology Informatics Club</p>
+            </div>
+          </div>
+          <div class="w-[1px] h-[65px] bg-white shadow-glow hidden md:block"></div>
+          <div class="flex flex-row md:flex-col gap-2">
+            <a href="#" aria-label="Instagram"
+              ><img
+                src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/Qo58fybJYO.svg"
+                class="w-[20px] h-[20px]"
+            /></a>
+            <a href="#" aria-label="Facebook"
+              ><img
+                src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/yXf9Fjhke2.svg"
+                class="w-[20px] h-[20px]"
+            /></a>
+            <a href="#" aria-label="Twitter"
+              ><img
+                src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/9QMxDqPuf8.svg"
+                class="w-[20px] h-[20px]"
+            /></a>
+          </div>
+        </div>
+        <p class="text-center text-[10px] mt-6">© 2025 Protic | All Right Reserved</p>
+      </footer>
+    </main>
+
+    <!-- <script src="script.js" defer></script> -->
+  </body>
+</html>
